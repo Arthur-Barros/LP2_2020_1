@@ -1,0 +1,5 @@
+// Garantir que a transpilação vai acontecer.
+
+{
+    "presets": ["@babel/preset-env"]
+}
