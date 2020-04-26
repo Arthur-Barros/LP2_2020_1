@@ -1,12 +1,16 @@
 import * as db from './config/db';
 
-import contatoCtrl from './controller/ContatoContraller';
+import ContatoController from './controllers/ContatoController';
+
+
+
+const contatoCtrl = new ContatoController();
 
 let recuperarContato = async () =>{
     db.conectarBD();
 
-    const contatos = await contatoCtrl.recuperarPorNome('a');
-    contatos.forEach(contato => console.log(contato))
+    const contatos = await contatoCtrl.recuperarTodos();
+    console.log(contatos);
 
     db.desconectarBD();
 }
